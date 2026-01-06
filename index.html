@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPEN INC</title>
+
+<style>
+:root{
+--bg:#050505;
+--card:#111;
+--border:#2a2a2a;
+--primary:#00f2ea;
+--text:#fff;
+--muted:#aaa;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+background:var(--bg);
+color:var(--text);
+font-family:Arial,Helvetica,sans-serif;
+line-height:1.8;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:0 20px;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+background:rgba(5,5,5,.9);
+border-bottom:1px solid var(--border);
+z-index:1000;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:space-between;
+align-items:center;
+padding:15px 0;
+gap:10px;
+}
+
+.logo{
+font-weight:800;
+font-size:1.4rem;
+}
+
+.logo span{color:var(--primary)}
+
+.nav-links{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.nav-links a{
+color:var(--muted);
+font-size:.9rem;
+text-decoration:none;
+}
+
+.nav-links a:hover{color:var(--primary)}
+
+.lang-switch button{
+background:none;
+border:1px solid var(--border);
+color:var(--muted);
+padding:5px 10px;
+cursor:pointer;
+}
+
+.lang-switch button:hover{
+border-color:var(--primary);
+color:var(--primary);
+}
+
+section{
+padding:100px 0;
+}
+
+#hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+text-align:center;
+background:radial-gradient(circle,#111,#050505);
+}
+
+h1{font-size:2.8rem;margin-bottom:20px}
+h2{font-size:2rem;margin-bottom:30px;text-align:center}
+p{color:var(--muted);margin-bottom:20px}
+
+.btn{
+background:var(--primary);
+color:#000;
+padding:12px 30px;
+display:inline-block;
+text-decoration:none;
+font-weight:600;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:var(--card);
+padding:30px;
+border:1px solid var(--border);
+}
+
+footer{
+border-top:1px solid var(--border);
+padding:30px 0;
+text-align:center;
+color:var(--muted);
+}
+
+/* language system */
+.lang{display:none}
+.lang.en{display:block}
+
+/* mobile */
+@media(max-width:768px){
+h1{font-size:2.2rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+<div class="logo">OPEN <span>INC</span></div>
+
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#plans">Plans</a>
+<a href="#contact">Contact</a>
+</div>
+
+<div class="lang-switch">
+<button onclick="setLang('en')">EN</button>
+<button onclick="setLang('fa')">FA</button>
+</div>
+</nav>
+</div>
+</header>
+
+<section id="hero">
+<div class="container">
+
+<div class="lang en">
+<h1>Secure. Anonymous. Unstoppable.</h1>
+<p>Next generation VPN and digital privacy infrastructure.</p>
+<a class="btn" href="#contact">Request Access</a>
+</div>
+
+<div class="lang fa">
+<h1>امن، ناشناس، توقف‌ناپذیر</h1>
+<p>زیرساخت نسل جدید حریم خصوصی و VPN</p>
+<a class="btn" href="#contact">درخواست دسترسی</a>
+</div>
+
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+
+<div class="lang en">
+<h2>Our Services</h2>
+<div class="cards">
+<div class="card">Private VPN</div>
+<div class="card">V2Ray & OpenVPN</div>
+<div class="card">Encrypted Access</div>
+</div>
+</div>
+
+<div class="lang fa">
+<h2>خدمات ما</h2>
+<div class="cards">
+<div class="card">وی‌پی‌ان خصوصی</div>
+<div class="card">V2Ray و OpenVPN</div>
+<div class="card">دسترسی رمزنگاری‌شده</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="plans">
+<div class="container">
+
+<div class="lang en">
+<h2>Subscription Plans</h2>
+<p>Monthly plans starting from €4</p>
+<p>Telegram Channel: TELEGRAM_CHANNEL_LINK</p>
+<p>Telegram Bot: TELEGRAM_BOT_LINK</p>
+</div>
+
+<div class="lang fa">
+<h2>تعرفه‌ها</h2>
+<p>شروع قیمت از ۴ یورو در ماه</p>
+<p>کانال تلگرام: TELEGRAM_CHANNEL_LINK</p>
+<p>ربات تلگرام: TELEGRAM_BOT_LINK</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+
+<div class="lang en">
+<h2>Contact</h2>
+<iframe src="GOOGLE_FORM_LINK" width="100%" height="500" frameborder="0"></iframe>
+</div>
+
+<div class="lang fa">
+<h2>تماس با ما</h2>
+<iframe src="GOOGLE_FORM_LINK" width="100%" height="500" frameborder="0"></iframe>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+<p>© OPEN INC</p>
+</div>
+</footer>
+
+<script>
+function setLang(l){
+document.querySelectorAll('.lang').forEach(e=>e.style.display='none');
+document.querySelectorAll('.'+l).forEach(e=>e.style.display='block');
+}
+</script>
+
+</body>
+</html>
